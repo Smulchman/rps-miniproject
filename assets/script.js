@@ -2,7 +2,7 @@ var choices = ['r','p','s'];
 var wins = 0;
 var losses = 0;
 var ties = 0;
-var scoresheet = [0, 0, 0]
+// var scoresheet = [wins, ties, losses]
 var userInput;
 var compInput;
 var outcomes = {
@@ -29,17 +29,16 @@ function getUserInput(){
 }
 
 function generateCompInput(){
-    compInput = choices[math.floor(math.random() * 3)];
+    compInput = choices[Math.floor(Math.random() * choices.length)];
+    return;
 }
 
 function whoWon(){
     if(outcomes[userInput][compInput] === "win"){
         wins++;
-        playRPS();
     }
     else if(outcomes[userInput][compInput] === "loss"){
         losses++;
-        playRPS();
     }
     else {
         ties++;
